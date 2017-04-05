@@ -1,3 +1,3 @@
-# AppSkeleton
+# MyVideoPlayer
 
-This is a skeleton that I like to use to pump out quick and simple applications.  This way most of the formatting is already done.
+Just messing around with the JWPlayer API.
