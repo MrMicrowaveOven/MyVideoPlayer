@@ -20,12 +20,19 @@
         file: "SampleVideo.mp4"
       });
 
+
       $("#player").attr("onmouseover", "hovering()");
       $("#player").attr("onmouseout", "idling()");
 
       function hovering() {
         showControls();
       }
+      $(window).keypress(function (e) {
+        if (e.keyCode === 0 || e.keyCode === 32) {
+          e.preventDefault()
+          jwplayer().play();
+        }
+      })
 
       function idling() {
         hideControls();
@@ -45,9 +52,6 @@
       }
 
     </script>
-
-
-
     <!-- <div class="description">
     Empty description
     </div>
