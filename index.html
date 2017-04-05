@@ -31,6 +31,8 @@
         if (e.keyCode === 0 || e.keyCode === 32) {
           e.preventDefault()
           jwplayer().play();
+        } else if (e.keyCode === 102) {
+          jwplayer().setFullscreen()
         }
       })
 
