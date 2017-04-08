@@ -1,16 +1,19 @@
 $(window).keypress(function (e) {
-  // console.log(e.keyCode);
   if (!$("#noteInput").is(":focus")) {
+    e.preventDefault();
     if (e.keyCode === 0 || e.keyCode === 32) {
-      e.preventDefault();
       jwplayer().play();
     } else if (e.keyCode === 102) {
-      e.preventDefault();
       jwplayer().setFullscreen();
     } else if (e.keyCode === 99) {
-      e.preventDefault();
       jwplayer().play(false);
       makeNote(jwplayer().getPosition());
+    }
+  }
+
+  if ($("#noteInput").is(":focus")) {
+    if (e.keyCode === 13) {
+      saveNote();
     }
   }
 });
