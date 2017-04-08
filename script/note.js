@@ -17,5 +17,7 @@ function saveNote() {
     $("#noteInput").val("");
     $("#noteForm").addClass("invisible");
     jwplayer().play(true);
+  } else {
+    $("#noteInput").val("Don't leave a blank note.");
   }
 }
