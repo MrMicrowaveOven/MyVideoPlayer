@@ -84,6 +84,10 @@ html {
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .inlineText {
   display: inline-block;
 }

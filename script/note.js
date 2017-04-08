@@ -1,17 +1,19 @@
 function makeNote(vidTime) {
-  $("#noteForm").removeClass("hide");
+  $("#noteForm").removeClass("invisible");
   var officialVidTime = Math.floor(vidTime * 100)/100;
   $("#noteTime").html(officialVidTime);
 }
 
 function saveNote() {
-  var noteTime = videoTime();
-
   var noteText = $("#noteInput").val();
-  $("#noteDisplay").html(
-    $("#noteDisplay").html() + noteTime + ": " + noteText + "<br>"
-  );
+  if (noteText !== "") {
+    var noteTime = videoTime();
 
-  $("#noteForm").addClass("hide");
-  jwplayer().play(true);
+    $("#noteDisplay").html(
+      $("#noteDisplay").html() + noteTime + ": " + noteText + "<br>"
+    );
+
+    $("#noteForm").addClass("invisible");
+    jwplayer().play(true);
+  }
 }
