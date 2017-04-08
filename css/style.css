@@ -4,7 +4,7 @@ body {
   font-family: 'Slabo 27px', serif;
   letter-spacing: .5px;
   margin: 60px auto;
-  min-height: 500px;
+  min-height: 650px;
   width: 720px;
   background-color: rgba(119, 136, 153, 0.75);;
   padding: 30px;
@@ -57,7 +57,7 @@ html {
 }
 
 .response {
-  width: 430px;
+  width: 100%;
   text-align: center;
 }
 
@@ -78,6 +78,12 @@ html {
   text-align: center;
 }
 
+/*Add to skeleton*/
+
 .hide {
   display: none;
+}
+
+.inlineText {
+  display: inline-block;
 }

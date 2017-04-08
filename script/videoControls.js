@@ -16,6 +16,10 @@ $(window).keypress(function (e) {
 $("#player").attr("onmouseover", "hovering()");
 $("#player").attr("onmouseout", "idling()");
 
+function videoTime() {
+  return Math.floor(jwplayer().getPosition() * 100)/100;
+}
+
 function hovering() {
   showControls();
 }

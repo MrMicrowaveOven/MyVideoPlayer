@@ -14,27 +14,21 @@
   <body>
     <script src="https://content.jwplatform.com/libraries/40ePXEh3.js" type="text/javascript"></script>
     <div id="player"></div>
-    <input class="hide"type="text" id="noteInput">
-    <script>
+    <div class="response hide" id="noteForm">
+      <div id="nodeLabel">Note to be placed at <div id="noteTime" class="inlineText"></div> seconds:</div>
+      <input class="" type="text" id="noteInput">
+      <button type="button" class="button" onclick="saveNote()">Save Note</button>
+    </div>
+    <div class="response" id="noteDisplay">
 
+    </div>
+    <script>
       jwplayer("player").setup({
         file: "SampleVideo.mp4"
       });
-
     </script>
     <script src="script/videoControls.js" type="text/javascript"></script>
     <script src="script/note.js" type="text/javascript"></script>
-    <!-- <div class="description">
-    Empty description
-    </div>
-    <div class="application">
-      <br>
-      <label class="field">Empty field
-      </label>
-
-      <button class="button inheritFont">Blank button</button>
-      <div class="response" id="response"></div>
-    </div> -->
     <div class= "portfolioLinks" id="portfolioLinks">
       Written by Benjamin Zagorski.
       <br>
