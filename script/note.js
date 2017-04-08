@@ -2,6 +2,7 @@ function makeNote(vidTime) {
   $("#noteForm").removeClass("invisible");
   var officialVidTime = Math.floor(vidTime * 100)/100;
   $("#noteTime").html(officialVidTime);
+  $("#noteInput").focus();
 }
 
 function saveNote() {
