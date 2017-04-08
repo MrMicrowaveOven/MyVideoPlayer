@@ -14,6 +14,7 @@ function saveNote() {
       $("#noteDisplay").html() + noteTime + ": " + noteText + "<br>"
     );
 
+    $("#noteInput").val("");
     $("#noteForm").addClass("invisible");
     jwplayer().play(true);
   }
