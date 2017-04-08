@@ -21,54 +21,9 @@
         file: "SampleVideo.mp4"
       });
 
-
-      $("#player").attr("onmouseover", "hovering()");
-      $("#player").attr("onmouseout", "idling()");
-
-      function hovering() {
-        showControls();
-      }
-
-      $(window).keypress(function (e) {
-        // console.log(e.keyCode);
-        if (e.keyCode === 0 || e.keyCode === 32) {
-          e.preventDefault();
-          jwplayer().play();
-        } else if (e.keyCode === 102) {
-          e.preventDefault();
-          jwplayer().setFullscreen()
-        } else if (e.keyCode === 99) {
-          e.preventDefault();
-          jwplayer().play(false);
-
-          makeNote(jwplayer().getPosition());
-        }
-      })
-
-      function makeNote(vidTime) {
-        $("#noteInput").removeClass("hide")
-
-        console.log(vidTime);
-      }
-
-      function idling() {
-        hideControls();
-      }
-
-      jwplayer().onDisplayClick(function() {
-      })
-
-      function hideControls() {
-        // console.log("Hiding");
-        jwplayer().setControls(false);
-      }
-
-      function showControls() {
-        // console.log("Showing");
-        jwplayer().setControls(true);
-      }
-
     </script>
+    <script src="script/videoControls.js" type="text/javascript"></script>
+    <script src="script/note.js" type="text/javascript"></script>
     <!-- <div class="description">
     Empty description
     </div>
