@@ -1,3 +1,5 @@
+var notes = [];
+
 function makeNote(vidTime) {
   $("#noteForm").removeClass("invisible");
   var officialVidTime = Math.floor(vidTime * 100)/100;
@@ -10,9 +12,14 @@ function saveNote() {
   if (noteText !== "") {
     var noteTime = videoTime();
 
-    $("#noteDisplay").html(
-      $("#noteDisplay").html() + noteTime + ": " + noteText + "<br>"
-    );
+
+    var noteHTML = $("<div></div>").html(noteTime + ": " + noteText + "<br>");
+    noteHTML.on("click", function() {
+      moveVideoTo(noteTime);
+    });
+    $("#noteDisplayArea").append(noteHTML);
+
+    addNote(noteTime, noteText);
 
     $("#noteInput").val("");
     $("#noteForm").addClass("invisible");
@@ -20,4 +27,11 @@ function saveNote() {
   } else {
     $("#noteInput").val("Don't leave a blank note.");
   }
+}
+
+function addNote(noteTime, noteText) {
+  notes.push({
+    noteTime: noteTime,
+    noteText: noteText
+  });
 }

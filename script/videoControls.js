@@ -25,6 +25,10 @@ function videoTime() {
   return Math.floor(jwplayer().getPosition() * 100)/100;
 }
 
+function moveVideoTo(time) {
+  jwplayer().seek(time);
+}
+
 function hovering() {
   showControls();
 }
