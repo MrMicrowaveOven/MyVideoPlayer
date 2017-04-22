@@ -10,6 +10,10 @@ body {
   padding: 30px;
 }
 
+.noteDisplay:hover {
+  cursor: pointer;
+}
+
 html {
   background-image: url("../background.png");
   background-size: 1700px

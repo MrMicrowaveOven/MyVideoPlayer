@@ -13,7 +13,7 @@ function saveNote() {
     var noteTime = videoTime();
 
 
-    var noteHTML = $("<div></div>").html(noteTime + ": " + noteText + "<br>");
+    var noteHTML = $("<div class='noteDisplay'></div>").html(noteTime + ": " + noteText + "<br>");
     noteHTML.on("click", function() {
       moveVideoTo(noteTime);
     });
