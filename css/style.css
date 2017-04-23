@@ -14,6 +14,11 @@ body {
   cursor: pointer;
 }
 
+#downloadButton {
+  width: 120px;
+  /*align-items: center;*/
+}
+
 html {
   background-image: url("../background.png");
   background-size: 1700px

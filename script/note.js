@@ -1,4 +1,4 @@
-var notes = [];
+var allNotes = [];
 
 function makeNote(vidTime) {
   $("#noteForm").removeClass("invisible");
@@ -30,7 +30,7 @@ function saveNote() {
 }
 
 function addNote(noteTime, noteText) {
-  notes.push({
+  allNotes.push({
     noteTime: noteTime,
     noteText: noteText
   });
