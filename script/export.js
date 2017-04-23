@@ -3,7 +3,7 @@ function sendTextFile() {
   // var dataObject = {};
   var dataString = "";
   allNotes.forEach(function(note) {
-    dataString += note.noteTime + "," + note.noteText + "\n";
+    dataString += note.noteTime + ',"' + note.noteText + '"\n';
     // dataObject[note.noteTime] = note.noteText;
   });
 
