@@ -10,6 +10,12 @@ body {
   padding: 30px;
 }
 
+.noteDisplay {
+  margin: 3px;
+  border-style: solid;
+  border-color: brown;
+}
+
 .noteDisplay:hover {
   cursor: pointer;
 }
