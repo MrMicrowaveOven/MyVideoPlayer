@@ -6,11 +6,8 @@ function sendTextFile() {
     dataString += note.noteTime + ',"' + note.noteText + '"\n';
     // dataObject[note.noteTime] = note.noteText;
   });
-
   save("VideoNotes-" + now, dataString);
 }
-
-
 
 function save(filename, data) {
   var blob = new Blob([data], {type: 'text/csv'});
