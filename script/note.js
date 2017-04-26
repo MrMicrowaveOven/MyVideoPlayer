@@ -12,13 +12,6 @@ function saveNote() {
   if (noteText !== "") {
     var noteTime = videoTime();
 
-
-    var noteHTML = $("<div class='noteDisplay'></div>").html(noteTime + ": " + noteText + "<br>");
-    noteHTML.on("click", function() {
-      moveVideoTo(noteTime);
-    });
-    $("#noteDisplayArea").append(noteHTML);
-
     addNote(noteTime, noteText);
 
     $("#noteInput").val("");
@@ -29,7 +22,20 @@ function saveNote() {
   }
 }
 
+function clearAllNotes() {
+  if (confirm("This will remove all notes.  Is this alright?")) {
+    allNotes = [];
+    $("#noteDisplayArea").html("");
+  } else {
+  }
+}
+
 function addNote(noteTime, noteText) {
+  var noteHTML = $("<div class='noteDisplay'></div>").html(noteTime + ": " + noteText + "<br>");
+  noteHTML.on("click", function() {
+    moveVideoTo(noteTime);
+  });
+  $("#noteDisplayArea").append(noteHTML);
   allNotes.push({
     noteTime: noteTime,
     noteText: noteText
