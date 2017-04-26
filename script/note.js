@@ -26,7 +26,9 @@ function clearAllNotes() {
   if (confirm("This will remove all notes.  Is this alright?")) {
     allNotes = [];
     $("#noteDisplayArea").html("");
+    return true;
   } else {
+    return false;
   }
 }
 
