@@ -16,6 +16,7 @@ $(document).ready(function(){
     if ($("#noteInput").is(":focus")) {
       if (e.key === "Enter") {
         saveNote();
+        $("#noteInput").blur();
       }
     }
   });
