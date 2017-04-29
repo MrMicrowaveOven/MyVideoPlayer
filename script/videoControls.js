@@ -1,25 +1,28 @@
-$(window).keypress(function (e) {
-  if (!$("#noteInput").is(":focus")) {
-    e.preventDefault();
-    if (e.keyCode === 0 || e.keyCode === 32) {
-      jwplayer().play();
-    } else if (e.keyCode === 102) {
-      jwplayer().setFullscreen();
-    } else if (e.keyCode === 99) {
-      jwplayer().play(false);
-      makeNote(jwplayer().getPosition());
+$(document).ready(function(){
+  $(document).keypress(function (e) {
+    if (!$("#noteInput").is(":focus")) {
+      e.preventDefault();
+      // console.log(e.key);
+      if (e.key === " ") {
+        jwplayer().play();
+      } else if (e.key === "f") {
+        jwplayer().setFullscreen();
+      } else if (e.key === "c") {
+        jwplayer().play(false);
+        makeNote(jwplayer().getPosition());
+      }
     }
-  }
 
-  if ($("#noteInput").is(":focus")) {
-    if (e.keyCode === 13) {
-      saveNote();
+    if ($("#noteInput").is(":focus")) {
+      if (e.key === "Enter") {
+        saveNote();
+      }
     }
-  }
-});
+  });
+  $("#player").attr("onmouseover", "hovering()");
+  $("#player").attr("onmouseout", "idling()");
+})
 
-$("#player").attr("onmouseover", "hovering()");
-$("#player").attr("onmouseout", "idling()");
 
 function videoTime() {
   return Math.floor(jwplayer().getPosition() * 100)/100;
@@ -37,8 +40,10 @@ function idling() {
   hideControls();
 }
 
-jwplayer().onDisplayClick(function() {
+$(document).ready(function(){
+  jwplayer().onDisplayClick(function() {
 
+  });
 });
 
 function hideControls() {
